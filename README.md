@@ -1,4 +1,9 @@
-# rust🎉
+# Rust🎉
 
-In this repository I store all of the lessons I learn from the Rust book. <br>
-I will append a readme with my thoughts in each lesson.
+I'll be learning rust mainly throught RBE (Rust By Example), altought, I'm gonna check the rust-book to learn more theorically every concept.
+
+By the wa. If I decide to mix my learning path with other sources, I will create a new markdown file where I share with you guys all the books I'm learning from.
+
+Kinda Unnecesary to remark, but I'm a developer with a Javascript/Typescript background so, in some point I'll be comparing features between 'em without digging too deep. if you find a error, feel free to open a new issue :)
+
+Hope this can help you to learn this beatiful language.
