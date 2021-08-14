@@ -13,11 +13,7 @@ Well, yes you saw it from the last section (comments), but here I will dig a bit
 For short: hello_world is function that prints out in a console the text "hello world"
 */
 
-fn hello_world(){
+pub fn hello_world(){
   println!("hello world");
 }
 
-
-fn main(){
-  hello_world()
-}

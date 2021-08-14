@@ -11,7 +11,7 @@ This code will be ignore by the compiler, you don't have to worry about it!
      * chunks of code. /* Block comments can be /* nested, */ */
 */ 
 
-fn main(){
+pub fn main(){
   // Print to terminal the text between (" "):
   println!("Hey world, I'm learning rust!");
 }
