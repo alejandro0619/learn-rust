@@ -1,4 +1,4 @@
-# 📍 Println!
+# 📍 Printing macros!
 
 Printing to console is handled by a serie of macros, lets take a look into it:
 
@@ -15,3 +15,5 @@ Printing to console is handled by a serie of macros, lets take a look into it:
 ``` fmt::Debug``` : Uses the ``` {:?} ``` marker. Format text for debugging purposes.
 fmt::Display: Uses the ``` {} ``` marker. Format text in a more elegant, user friendly fashion.
 Here, we used fmt::Display because the std library provides implementations for these types. To print text for custom types, more steps are required.
+
+For more information about [printing macros](https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_debug.html)
