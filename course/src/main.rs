@@ -8,7 +8,8 @@
 //mod vectors;
 //mod conditionals;
 //mod loops;
-mod functions;
+//mod functions;
+mod structs;
 fn main() {
-  functions::run();
+  structs::run();
 }
