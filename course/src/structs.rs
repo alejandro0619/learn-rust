@@ -27,6 +27,9 @@ impl Person {
     self.second_name = String::from(last);
 
   }
+  fn name_to_tuple(self) ->  (String, String){
+    (self.first_name, self.second_name)
+  }
 }
 
 pub fn run(){
@@ -46,5 +49,6 @@ pub fn run(){
   println!("Hey my name is: {} {}", person.first_name, person.second_name);
   person.set_last_name("lopez");
   println!("{}", person.full_name());
+  println!("Name in tupe{:?}", person.name_to_tuple());
 
 }

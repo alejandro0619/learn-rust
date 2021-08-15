@@ -9,7 +9,8 @@
 //mod conditionals;
 //mod loops;
 //mod functions;
-mod structs;
+//mod structs;
+mod cli;
 fn main() {
-  structs::run();
+ cli::run();
 }
