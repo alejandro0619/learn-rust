@@ -12,7 +12,8 @@ Well, yes you saw it from the last section (comments), but here I will dig a bit
 
 For short: hello_world is function that prints out in a console the text "hello world"
 */
-
+ // run it online: 
+// https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=baac3300f5a56e3249d1bea7d2108af8
 pub fn hello_world(){
   println!("hello world");
 }
