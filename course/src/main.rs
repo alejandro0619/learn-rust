@@ -10,7 +10,7 @@
 //mod loops;
 //mod functions;
 //mod structs;
-mod cli;
+//mod cli;
 fn main() {
- cli::run();
+ //cli::run();
 }
