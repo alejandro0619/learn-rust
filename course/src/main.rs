@@ -1,16 +1,6 @@
-//mod comments;
-//mod hello_world;
-//mod primitives;
-//mod print;
-//mod var;
-//mod string;
-//mod arrays;
-//mod vectors;
-//mod conditionals;
-//mod loops;
-//mod functions;
-//mod structs;
-//mod cli;
+//mod variables;
+//mod constants;
+//mod shadowing;
 fn main() {
- //cli::run();
+    
 }
