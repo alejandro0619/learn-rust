@@ -50,3 +50,32 @@ fn returning_values_loop(){
     }
   };
 }
+
+// Loop through an array using for :
+fn loop_array_using_forin(){
+  let a = [1, 2, 3];
+  for e in a {
+    // Code
+    // e will be have the value of each element of a
+  }
+}
+
+// Using while:
+fn while_loop(){
+  let mut conditionals = true;
+  let mut num = 5;
+  while conditional {
+    // code
+    if num > 0 {
+      num -= 1;
+    } else {
+      break;
+    }
+  }
+}
+
+fn loop_in_range(){
+  for number in (1..=5) {
+    println!("The current number is: {}", number);
+  }
+}
