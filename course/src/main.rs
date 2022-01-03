@@ -1,7 +1,8 @@
 //mod variables;
 //mod constants;
 //mod shadowing;
-mod types;
+//mod types;
+// mod loops;
 fn main() {
-    types::display_types();
+    
 }
