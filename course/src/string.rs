@@ -55,3 +55,24 @@ fn move_strings(){
   let s1 = String::from("Hello");
   let s2 = s1;
 }
+
+// * Stack-only data: Copy
+// This code using integers is completely valid:
+fn stack_only_data_copy(){
+  let x = 5;
+  let y = x;
+  println!("x = {}, y = {}", x, y);
+}
+// This seems to contradict what we just learned: we don't a call to clone, but x is still valid and wasn't moved into y.
+// The reason is that types such as integers have a known size at compile time
+// and are stored completely on the stack. SO copies are quick to make.
+// So there's no reason to prevent x being valid after the y assignment.
+
+//  Basically there's no difference between shaloow and deep copy here.
+// Calling clone wouldn't do anything differente from the usual shallow copying and we can leave it out.
+
+// Rust has a special annotation called the Copy trait that we can place on types like integers that are stored on the stack. 
+// If a type implements the Copy trait, an older variable is still usable after assigment. Rus won't let us annotate a type with the Copy trait if the type or any of its parts has implemented the Drop trait.
+// If the type need something special to happen when the value goes out of scope and we add the Copy annotation to that type, we'll get a compile-time error.
+// The types that implements the Copy trait:
+// Integers, boolean, floating, char, tuples (only if contain types also implements Copy)
