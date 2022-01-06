@@ -56,7 +56,16 @@ fn move_strings(){
   let s2 = s1;
 }
 
-// * Stack-only data: Copy
+// ! Clone:
+// If we want to deeply copy the heap data of the string, not just stack data, we can use a common a method called clone:
+fn display_clone_method(){
+  let s1 = String::from("Hellow");
+  let s2 = s1.clone();
+  println!("s1 = {}, s2 = {}", s1, s2);
+}
+// This will produce exactly what we would expect when we just "Copy the variables into other one and maintain both alive"
+// But this code may be expensive if we are copying a large amount of data
+// ! Stack-only data: Copy
 // This code using integers is completely valid:
 fn stack_only_data_copy(){
   let x = 5;
@@ -76,3 +85,5 @@ fn stack_only_data_copy(){
 // If the type need something special to happen when the value goes out of scope and we add the Copy annotation to that type, we'll get a compile-time error.
 // The types that implements the Copy trait:
 // Integers, boolean, floating, char, tuples (only if contain types also implements Copy)
+
+// * Ownershrip and functions
