@@ -86,4 +86,56 @@ fn stack_only_data_copy(){
 // The types that implements the Copy trait:
 // Integers, boolean, floating, char, tuples (only if contain types also implements Copy)
 
-// * Ownershrip and functions
+// * Ownership and functions
+// Passing a value into a function will move or copy, just like an assigment.
+fn takes_ownership(some_string: String){
+  println!("Some string: {}", some_string);
+}
+fn makes_copy(some_integer: i32){
+  println!("Some integer: {}", some_integer);
+}
+fn test_one(){
+  let s = String::from("Hello") // comes into scope.
+  takes_ownership(s);
+  let x = 7;
+  makes_copy(x);
+}
+// It will move the value stored in s because it is not a type that implements the Copy trait.
+// But x will remain available even after passing that value to the function.
+
+fn test_two() {
+  let s1 = gives_ownership();         // gives_ownership moves its return
+                                      // value into s1
+  let s2 = String::from("hello");     // s2 comes into scope
+  let s3 = takes_and_gives_back(s2);  // s2 is moved into
+                                      // takes_and_gives_back, which also
+                                      // moves its return value into s3
+} // Here, s3 goes out of scope and is dropped. s2 was moved, so nothing
+// happens. s1 goes out of scope and is dropped.
+
+fn gives_ownership() -> String {             // gives_ownership will move its
+                                           // return value into the function
+                                           // that calls it
+
+  let some_string = String::from("yours"); // some_string comes into scope
+
+  some_string                              // some_string is returned and
+                                           // moves out to the calling
+                                           // function
+}
+// This function takes a String and returns one
+fn takes_and_gives_back(a_string: String) -> String { // a_string comes into
+                                                    // scope
+
+  a_string  // a_string is returned and moves out to the calling function
+}
+
+// And it is possible to return multiples values using a tuple:
+fn test_three(){
+  let s1 = String::from("Hello world from Rust");
+  let (s2, length) = calculate_length(s1);
+}
+fn calculate_length(s: String) -> (String, usize){
+  let length = s.len();
+  (s, length)
+}
