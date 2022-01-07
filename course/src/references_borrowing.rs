@@ -17,6 +17,7 @@ fn calculate_length(s: &String) -> usize {
 
 // To modify the value we are borrowing we need to:
 // &mut means we are borrowing the value of the variable and we are going to modify it.
+// We can only use one mutable references to a value once at time.
 fn modify_string(s: &mut String) {
   s.push_str(", World");
 }
