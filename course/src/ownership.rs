@@ -1,3 +1,5 @@
+// We are going to discuss about Owenership using examples and comparisions so we are first introducing to String type and then using it while explaining a Rust-core concept.
+
 // What´s the difference between string literals and String type?
 // str are known and fixed size at compile time. Strings are growable and can be bound at runtime.
 // Str lives in the stack memory while Strings are allocated in the heap.
