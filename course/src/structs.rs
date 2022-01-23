@@ -42,8 +42,31 @@ fn create_database(user: &User, date: String) -> Database {
 fn display_db_registry(db: Database){
   println!("User: \n {} \nCreated at: \n {}", db.user_log.user_name, db.created_at_date)
 }
+
+// Tuple structs
+// Are like simple tuples  with the added meaning the name the struct provides
+// You don' have to give any field a name.
+struct Point(i32, i32, i32); //x, y, z coordenates
+fn create_point(x: i32, y: i32, z: i32) -> Point {
+  Point(x, y, x)
+}
+
+// Unit-like struct without any field:
+//You can also define structs that don’t have any fields! 
+//These are called unit-like structs because they behave similarly to ()
+// Unit-like structs can be useful in situations 
+//in which you need to implement a trait on some type 
+// but don’t have any data that you want to store in the type itself.
+
+struct UnitStruct;
+
+//-----
 pub fn start() {
   let user1: User = create_user(String::from("spaghetti"), true, String::from("spaghettimail@hotmail.com"));
+  let user2: User = User {
+    user_name: String::from("Alejandro"),
+    ...user1 // Struct update syntax
+  }
   let db1 = create_database(&user1, String::from("05-02-2021"));
   display_db_registry(db1);
 }
