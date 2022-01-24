@@ -31,7 +31,7 @@ struct Database {
 }
 
 // create a database instance
-fn create_database(user: &User, date: String) -> Database {
+fn create_database(user:  User, date: String) -> Database {
   let mut db = Database {
     user_log: user,
     created_at_date: date
@@ -63,10 +63,6 @@ struct UnitStruct;
 //-----
 pub fn start() {
   let user1: User = create_user(String::from("spaghetti"), true, String::from("spaghettimail@hotmail.com"));
-  let user2: User = User {
-    user_name: String::from("Alejandro"),
-    ...user1 // Struct update syntax
-  }
-  let db1 = create_database(&user1, String::from("05-02-2021"));
+  let db1 = create_database(user1, String::from("05-02-2021"));
   display_db_registry(db1);
 }

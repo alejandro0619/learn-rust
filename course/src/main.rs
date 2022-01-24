@@ -1,4 +1,4 @@
-mod structs;
+mod structs_methods;
 fn main() {
-  structs::start();
+  structs_methods::start();
 }
