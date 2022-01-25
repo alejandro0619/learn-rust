@@ -50,10 +50,15 @@ impl IPAddrrKindV2 {
       "V6" => IPAddrrKindV2::V6(address),
       _ => panic!("Invalid version"),
     }
+
+    
   }
 
   fn display(&self){
-    println!("Your address is {:?}", &self)
+    match self {
+      IPAddrrKindV2::V4(val) => println!(" Your IP is {} and the kind of V4", val), // prints out the value of the variant
+      IPAddrrKindV2::V6(val) => println!(" Your IP is {} and the kind of V6", val), // prints out the value of the variant
+    }
   }
 }
 pub fn start(){
