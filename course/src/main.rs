@@ -1,4 +1,4 @@
-mod structs_methods;
+mod enums;
 fn main() {
-  structs_methods::start();
+  enums::start();
 }
