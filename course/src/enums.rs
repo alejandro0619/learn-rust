@@ -67,3 +67,31 @@ pub fn start(){
   v4.display();
   v6.display();
 }
+
+// An enum can store a wide variey of types, let's look at:
+enum Message {
+  Quit, // has n data associeated with it at all
+  Move { x: i32, y: i32}, // Has named fields like a struct does
+  Write(String), // Write include a single String
+  ChangeColor(i32, i32, i32), // Includes three i32 values
+}
+
+// Definition of each variant:
+struct Quit; // unit struct
+struct MoveMessage {
+  x: i32,
+  y: i32
+}
+struct WriteMessage(String); // tuple struct
+struct ChangeColorMessage(i32, i32, i32); // tuple struct
+
+// we can use impl in both structs and enums to add funcionality:
+impl Message {
+  fn call(&self) {
+    println!("calling");
+  }
+}
+
+// so we can:
+//let m = Message::Write(String::from("aaaa"));
+//m.call();
