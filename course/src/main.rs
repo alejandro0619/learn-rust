@@ -1,4 +1,4 @@
-mod match_statement;
+mod if_let;
 fn main() {
-  println!("{:?}", match_statement::plus_one(Some(5)));
+  println!("{:?}", if_let::test_cool());
 }
