@@ -85,6 +85,11 @@ pub fn eat_at_restaurant(){
 fn serve_order() {}
 
 mod back_of_house {
+
+    pub enum Appetizer {
+        Soup, 
+        Salad
+    }
     pub struct Breakfast {
         pub toast: String,
         seasonal_fruit: String,
@@ -104,7 +109,7 @@ mod back_of_house {
     fn cook_order(){}
 }
 
-// ~ Making structs and enums public
+// ~ Making structs public
 // we can also use pub keyword to designate structs and enums as public, but there are few extra details. 
 // If we use pub before a struct definition, we make the struct public,
 // but the strutc's fields we still be private. 
@@ -114,7 +119,7 @@ mod back_of_house {
 // But the chef decides which fruit accompanies the meal based on what's in season and in stock.
 // The available fuit changes quickly, so customers can't choose the fruit or even see which fruit they'll get.
 
-fn customers_eat(){
+fn costomers_eat(){
     // Order a breakfast in the summer with Rye toast
     let mut meal = back_of_house::Breakfast::summer("Rye");
     // Change our mind about what bread we'd like
@@ -124,3 +129,10 @@ fn customers_eat(){
     // to see or modify the seasonal fruit that comes with the meal
     //meal.seasonal_fruit = String::from("blueberries");
 }
+
+// Because toast field is public in back_of_house::Breakfast, we can read and rewrite it's value using dot notation.
+// Also, note that because back_of_house::Breakfast has a private field, the struct needs to provide a public associated function that constructs an instance of Breakfast.
+// We've named it summer. If Breakfast didn't have such a function, we could'nt create a instance of Breakfast in costumers_eat() because we couldn't set the value of seasonal_fruit field in costumers_eat() function
+
+// ~  Making enums public
+// Because we made the Appetizer enum public, we can use the Soup and Salad variants in costumers_eat. Enums aren't very useful unless their variants are public; it would be annoying to have to annotate all enum variants with pub in every case, so the default for enums variants is to be public.
