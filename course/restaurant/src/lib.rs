@@ -136,3 +136,74 @@ fn costomers_eat(){
 
 // ~  Making enums public
 // Because we made the Appetizer enum public, we can use the Soup and Salad variants in costumers_eat. Enums aren't very useful unless their variants are public; it would be annoying to have to annotate all enum variants with pub in every case, so the default for enums variants is to be public.
+
+// ~ Bringing paths into scope with the use keyword.
+// It might seem like the path we've written to call functions so far are inconveniently  long and repetitive. 
+
+// Fortunately, there's a way to simplfy this process. We can bring a path into a scope once and then call them in that path as if they're local items with the use keyword.
+
+// We bring the crate::front_of_house::hosting module into the scope of the eat_at_restaurant function so we only have to specify hosting::add_to_waitlist to call the function in the following function:
+
+//We "import" the module :
+use crate::front_of_house::hosting;
+
+fn test1(){
+    hosting::add_to_waitlist(); // we use it here
+}
+// We can bring a item using use and a relative path, too:
+
+// use self::front_of_house::hosting;
+
+fn test2(){
+    // hosting::add_to_waitlist();
+}
+
+// ~ creating an idiomatic use paths:
+// If we wonder why do we use: crate::front_of_house::hosting
+// rather than specifying all the way out to the add_to_waitlist function
+// to archieve the same result.
+
+// Bringing the function's parent module into scope with use means we have to specify the parent moduke when calling the function. 
+// Specifying the parent module when calling the function
+// makes it clear that the function isn't locally defined while still minimizing repetition of the full path .
+
+// While importing Structs and enums it's idiomatic to specify the full path.
+// A exception to it if we import two modules with the same struct's name, we should import it by using it's parent
+
+// ~ Providing new names with the as keyword.
+// There's another solution to the problem of bringin two types of the same name into the same scope with use : after the path we can specify as  and a new local name alias, for the type.
+
+// ~ Re exporting using pub use
+
+// When we bring a name into scppe with the use keyword, the name available in the new scope is private. 
+// To enable the code that calls our code to refer to that name as if it had been defined in that code's scope, we can combine pub and use keywords.
+// This technique is called re-exporting because we're bringin an item into scope but also making that item available for others to bring into their scope
+
+// ~ using nested paths to clean up large use lists
+// If we're using multiple item defined in the the same module, listing each item on its own line can take up a lot of vertical space in our files.
+// This way:
+// use std::cmp::Ordering;
+// use std::io;
+
+// Instead, we can do:
+// use std::{cmp::Ordering, io};
+
+// We can use nested path at any level in a path, which is useful when combining two use statements that share a subpath:
+// use std::io;
+// use std::io::Write;
+
+// Instead, we can do:
+// use std::io{Self, Write}; // Self refers to std::io itself
+
+//~ Glob operator;
+// If we want to bring all public items defined in a path into scope, we can specify that path followed by *, the glob operator.
+
+// use std::collections::*
+
+// Be careful when using the glob operator, Glob can make it harder to tell what names ar in scope and where a name used in your was defined
+
+// ~ Separating modules into different files:
+// So far, all the eamples in this chaptes defined multiple modules in one file.
+// But as the module get bigger, you migth want to move their definitions to a separate file to make the code easier to navigate.
+
+// Let's  go to the new_restaurant folder
