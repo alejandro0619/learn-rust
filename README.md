@@ -1,6 +1,6 @@
 # Rust🎉
 
-I'll be learning rust mainly throught The book
+I'll be learning rust mainly through The book
 
 
 
