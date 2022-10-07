@@ -4,7 +4,7 @@
 // Creating a vector
 
 pub fn vectors(){
-  let my_vec: Vec<i32> = Vec::new(); // new empty vector of i32's binded to my_vec
+  let _my_vec: Vec<i32> = Vec::new(); // new empty vector of i32's binded to my_vec
   // We added the type annotation because we aren't inserting values into the vector
   // So Rust needs to know what kind of elements we intend to store. This is an import point because Vectors are implemented using generics.
 
@@ -23,7 +23,7 @@ pub fn vectors(){
   //Like a struct, a vector is freed when it goes out of scope.
 
   {
-      let v = vec![1, 2, 3, 4];
+      let _v = vec![1, 2, 3, 4];
       // Do some stuff with v
   } // It is dropped here.
 
@@ -34,7 +34,7 @@ pub fn vectors(){
   // If you prefer the safety you can access by:
   match v.get(2){
       Some(third) => println!("The third element accessed safety: {}", third),
-      None => println!("No third element");
+      None => println!("No third element"),
   }
 
   // Iterating over the values in a vector:
@@ -43,12 +43,12 @@ pub fn vectors(){
   // How to use a for loop to get inmutable references to each element in a vec.
 
   for i in &v {
-      println!("{}", v);
+      println!("{}", i);
   }
 
   // Or if you wanna iterate over mutable references:
 
-  let v2 = vec![1, 2, 4, 6];
+  let mut v2 = vec![1, 2, 4, 6];
 
   for i in &mut v2 {
       *i += 50;
@@ -56,10 +56,10 @@ pub fn vectors(){
 }
 
 fn _enum_to_store_mul_types() {
-    // Vectoes can only store values that are the same type.
+    // Vectors can only store values that are the same type.
     // This can be inconvenient; there are definitely use cases
     // for needing to store a list of item of different types.
-    // Fortunately, the variants of an enum are defied under the same 
+    // Fortunately, the variants of an enum are defined under the same 
     // enum type. So, when we need one type to represent elements of 
     // different types, we can defined and use an enum! 
 
@@ -71,15 +71,24 @@ fn _enum_to_store_mul_types() {
     // Then we can create a vector to hold that enum and so, ultimately
     // holds different types. We've demostrated this below:
     
-    enum spreadsheetCell {
+    enum SpreadsheetCell {
         Int(i32),
         Float(f64),
         Text(String),
     }
     let row = vec![
-        spreadsheetCell::Int(3),
-        spreadsheetCell::Float(3.14),
-        spreadsheetCell::Text(String::from("Blue")),
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Float(3.14),
+        SpreadsheetCell::Text(String::from("Blue")),
     ];
+
+    // And now we can loop over the vector and use a match expression to print in display its values
+    for i in &row {
+        match i {
+            SpreadsheetCell::Int(i) => println!("Int: {}", i),
+            SpreadsheetCell::Float(f) => println!("Float: {}", f),
+            SpreadsheetCell::Text(s) => println!("Text: {}", s),
+        }
+    }
 
 }

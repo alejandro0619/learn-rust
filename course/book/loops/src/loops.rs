@@ -64,7 +64,7 @@ fn loop_array_using_forin(){
 fn while_loop(){
   let mut conditionals = true;
   let mut num = 5;
-  while conditional {
+  while conditionals {
     // code
     if num > 0 {
       num -= 1;

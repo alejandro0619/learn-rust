@@ -33,8 +33,8 @@ fn _this_code_will_panic(){
   let mut s = String::from("new");
   let r1 = &s; // No problem
   let r2 = &s; // No problem
-  let r3 = &mut s;
-  println!("{}{}{}", r1, r2, r3);
+  // let r3 = &mut s; // problem
+  println!("{}{}", r1, r2);
   // We cannot have a mutable reference while we have an inmutable one
 }
 fn _this_code_will_compile(){
@@ -53,16 +53,3 @@ fn _this_code_will_compile(){
 // that may have been given to someone else
 // By freeing some memory while preserving a pointer to that memmory. In Rust, by contrast, the compiler guarantees that references will never be dangiling references, if you have a reference to some data, the compiler will ensure that the data will not go out of scope before the reference to the data does.
 
-// This is a dangling reference that won't compile.
-fn test_dangle(){
-  let reference_to_nothing  = dangle_will_panic();
-}
-fn dangle_will_panic() -> &String { // returns a reference to a string
-  let s = String::from("Hello!"); // s is the string
-  &s // we return the reference to the string, s
-} // here the function end and s goes out of scope and s is dropped
-// The best solution is to return the string itself, the ownership will be moved and nothing is deallocated
-
-// So basically:
-// - At any given time, you can have either one mutable reference or any number of immutable references.
-// - References must always be valid.
