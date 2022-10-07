@@ -1,5 +1,5 @@
 // gets the definitions from the body of front_of_house module.
-//To continue with out example and extract the  hosting module to its own file as well,
+//To continue with our example and extract the  hosting module to its own file as well,
 // we change src/front_of_house.rs to contain only the declaration of the hosting module
 
 /*pub mod hosting {

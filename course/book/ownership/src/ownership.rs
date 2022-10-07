@@ -36,8 +36,8 @@ fn display_string(){
 
 // ! WAYS THAT VARIABLES AND DATA INTERACT: MOVE.
 // Multiples variables can interact with the same data in differente ways:
-let y = 5; // bind the value 5 to the variable y.
-let x = y; // Copy the value of variable y and bind it to y.
+//let y = 5;  bind the value 5 to the variable y.
+//let x = y; // Copy the value of variable y and bind it to y.
 // Both are equal to 5, and that's right because integers aren't complex and they are well known and its size in compilet time.
 
 // What will happen here?
@@ -97,7 +97,7 @@ fn makes_copy(some_integer: i32){
   println!("Some integer: {}", some_integer);
 }
 fn test_one(){
-  let s = String::from("Hello") // comes into scope.
+  let s = String::from("Hello"); // comes into scope.
   takes_ownership(s);
   let x = 7;
   makes_copy(x);

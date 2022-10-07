@@ -11,7 +11,10 @@
 
 // However, the concept that null is trying to express is still a useful one: a null is a value that is currently invalid or absent.
 
-let some_number  = Some(4);
-let some_string = Some("Some string");
+pub fn options(){
+  let some_number  = Some(4);
+  let some_string = Some("Some string");
 
-let absent_number: Option<i32> = None;
+  let absent_number: Option<i32> = None;
+
+}

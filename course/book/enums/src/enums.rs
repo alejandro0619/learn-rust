@@ -70,7 +70,7 @@ pub fn start(){
 
 // An enum can store a wide variey of types, let's look at:
 enum Message {
-  Quit, // has n data associeated with it at all
+  Quit, // has no data associeated with it at all
   Move { x: i32, y: i32}, // Has named fields like a struct does
   Write(String), // Write include a single String
   ChangeColor(i32, i32, i32), // Includes three i32 values

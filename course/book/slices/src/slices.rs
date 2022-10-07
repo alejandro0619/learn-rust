@@ -39,7 +39,7 @@
 
  // Now, knowing how does str works, let's return the first word of given string:
 
- //           Before it accepted &String
+ // Before it accepted &String
  fn get_first_word( string: &str) -> &str {
   let bytes = string.as_bytes(); // convert the string slice into a collection of bytes
   for ( i, &item ) in bytes.iter().enumerate() { // creates a iterator and wraps an index (enumerate) that returns a tuple, so we can deconstruct it (i, &item) and loop through it
@@ -59,11 +59,11 @@ pub fn test_get_first_word(){
   // We declare a String's type variable:
   let s = String::from("Hello World");
   let word =  get_first_word(&s); // pass a reference
-  let word = get_first_word(&s[..]); // Pass a Slice, wheter whole
+  let word = get_first_word(&s[..]); // Pass a Slice, whether whole
   let word = get_first_word(&s[..=5]); // Or partial
   
   let str = "Hello world";
-  let word = get_first_word(&str[0..=5]); // Works on slices of string literals wheter partials
+  let word = get_first_word(&str[0..=5]); // Works on slices of string literals whether partials
   let word = get_first_word(&str[..]); // or whole
   let word = get_first_word(str); // Because string literals are string slices already this will work too without the slice syntax
  }
