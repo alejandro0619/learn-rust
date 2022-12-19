@@ -1,1 +1,1 @@
-From Crust of Rust **<Jon Gjengse>**: Sorting Algorithm
+From Crust of Rust Jon Gjengse: Sorting Algorithm
