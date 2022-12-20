@@ -12,7 +12,7 @@ impl Sorter for Bubblesort {
         We set it to true, then in each iteration
         We set the value to false, and we'll
         keep iterating as long as didn't make the
-        whole walk along the slice.
+        wholea walk along the slice.
         */
         let mut swapped = true;
         while swapped {
