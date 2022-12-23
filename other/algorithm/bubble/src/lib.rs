@@ -1,5 +1,6 @@
 pub mod bubble;
 pub mod insertion;
+pub mod selection;
 
 /*
 We implement a trait `Sorter` that has a function sort that receives a Generic over T that implements
