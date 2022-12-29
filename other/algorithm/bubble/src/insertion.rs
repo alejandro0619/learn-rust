@@ -30,3 +30,12 @@ impl Sorter for InsertionSort {
           }
       }
 }
+#[test]
+fn bubble_test() {
+    let mut my_vec = vec![1, 9, 6];
+    super::sort::<_, InsertionSort>(&mut my_vec);
+    assert_eq!(
+        my_vec,
+        &[1, 6, 9]
+    )
+}
